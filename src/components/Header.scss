@@ -1,4 +1,7 @@
 .Header {
+    grid-column-start: gutterLeft;
+    grid-column-end: end;
+
     display: flex;
     flex-direction: column;
     align-items: center;

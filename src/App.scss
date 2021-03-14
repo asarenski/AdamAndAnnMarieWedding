@@ -1,4 +1,6 @@
 .App {
-  text-align: center;
   font-size: calc(10px + 2vmin);
+
+  display: grid;
+  grid-template-columns: [gutterLeft] 15% [main] auto [gutterRight] 15% [end];
 }
