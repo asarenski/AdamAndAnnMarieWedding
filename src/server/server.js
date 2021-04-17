@@ -20,7 +20,6 @@ app.use((req, res, next) => {
     next();
 });
 
-// TODO need to define process.env.NODE_ENV !== 'development' for this middleware to work properly
 app.use(requireHTTPS);
 
 /**
