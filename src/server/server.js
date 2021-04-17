@@ -28,6 +28,7 @@ app.use(requireHTTPS);
 app.use(express.static(path.join(__dirname,'../../build')));
 
 app.get('/api/checkHealth', routes.checkHealth);
+app.get('/api/proposalPhotos', routes.getProposalPhotos);
 app.get('/*', (req, res) => res.sendFile(path.join(__dirname, 'build', 'index.html')));
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));

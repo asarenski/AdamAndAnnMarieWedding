@@ -10,7 +10,7 @@ const ENV = process.env.NODE_ENV || CONFIG_ENV || 'production';
 function requireHTTPS(req, res, next) {
     if (
         !req.secure
-        && req.get('X-Forwarded-Proto').toLowerCase() !== 'https'
+        && (req.get('X-Forwarded-Proto') || '').toLowerCase() !== 'https'
         && ENV !== 'development'
     ) {
         return res.redirect('https://' + req.get('host') + req.url);
