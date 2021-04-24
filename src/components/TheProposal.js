@@ -5,14 +5,19 @@ import PhotoGrid from './PhotoGrid';
 
 import './TheProposal.scss';
 
+const BASE_URL = process.env.NODE_ENV === 'development'
+    ? `http://localhost:8080`
+    : '';
+
 const TheProposal = () => {
     const [proposalPhotoUrls, setProposalPhotoUrls] = useState([]);
 
     useEffect(() => {
-        axios.get('/api/proposalPhotos')
+        console.log(process.env);
+        axios.get(`${BASE_URL}/api/proposalPhotos`)
         .then(res => setProposalPhotoUrls(res.data))
         .catch(e => console.error(e));
-    }, [proposalPhotoUrls]);
+    }, []);
 
     return (
         <section className='TheProposal'>

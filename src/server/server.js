@@ -4,14 +4,8 @@ const express = require('express');
 const app = express();
 const requireHTTPS = require('./requireHTTPS');
 const routes = require('./routes');
-const result = require('dotenv').config();
 
-if (result.error) {
-    throw new Error(result.error);
-}
-
-const {CORS, PORT: CONFIG_PORT} = result.parsed;
-const PORT = process.env.PORT || CONFIG_PORT || 8080;
+const {SERVER_PORT: PORT, CORS} = process.env;
 
 app.use((req, res, next) => {
     // res.header('Access-Control-Allow-Origin', 'https://adamannmariewedding.ue.r.appspot.com');
