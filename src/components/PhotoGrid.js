@@ -1,9 +1,15 @@
 import React from 'react';
+import Card from './Card';
 
-const PhotoGrid = ({urls = []}) => {
+const PhotoGrid = ({urls = [], className}) => {
     return (
-        <section>
-            {urls.map(url => <img key={url} src={url} />)}
+        <section className={className}>
+            {urls.map(url => {
+                return <Card 
+                    url={url}
+                    title={url}
+                />
+            })}
         </section>
     );
 };

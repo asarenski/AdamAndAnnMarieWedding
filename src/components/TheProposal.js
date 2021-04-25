@@ -21,9 +21,11 @@ const TheProposal = () => {
 
     return (
         <section className='TheProposal'>
-            <h2>The Proposal</h2>
-            <p>Lorem ipsum....</p>
-            <PhotoGrid urls={proposalPhotoUrls} />
+            <header>
+                <h3>The Proposal</h3>
+                <p>On Christmas day of 2020, Adam proposed to Ann Marie at the Seidel household.</p>
+            </header>
+            <PhotoGrid className={'TheProposal-photos'} urls={proposalPhotoUrls} />
         </section>
     );
 };
