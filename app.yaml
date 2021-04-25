@@ -4,7 +4,7 @@ automatic_scaling:
   min_instances: 0
   max_instances: 3
 handlers:
-  - url: /.*
+- url: /.*
   secure: always
   redirect_http_response_code: 301
   script: auto
