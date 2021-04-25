@@ -1,15 +1,18 @@
 import React from 'react';
 import Card from './Card';
+import LoadingSpinner from './LoadingSpinner';
 
-const PhotoGrid = ({urls = [], className}) => {
+const PhotoGrid = ({urls, className}) => {
     return (
         <section className={className}>
-            {urls.map(url => {
-                return <Card 
-                    url={url}
-                    title={url}
-                />
-            })}
+            <LoadingSpinner data={urls}>
+                {urls && urls.map(url => {
+                    return <Card
+                        url={url}
+                        title={url}
+                    />
+                })}
+            </LoadingSpinner>
         </section>
     );
 };

@@ -10,10 +10,9 @@ const BASE_URL = process.env.NODE_ENV === 'development'
     : '';
 
 const TheProposal = () => {
-    const [proposalPhotoUrls, setProposalPhotoUrls] = useState([]);
+    const [proposalPhotoUrls, setProposalPhotoUrls] = useState();
 
     useEffect(() => {
-        console.log(process.env);
         axios.get(`${BASE_URL}/api/proposalPhotos`)
         .then(res => setProposalPhotoUrls(res.data))
         .catch(e => console.error(e));
