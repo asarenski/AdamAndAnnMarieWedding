@@ -5,7 +5,8 @@ const app = express();
 const requireHTTPS = require('./requireHTTPS');
 const routes = require('./routes');
 
-const {SERVER_PORT: PORT, CORS} = process.env;
+const {SERVER_PORT, CORS} = process.env;
+const PORT = SERVER_PORT || 8080;
 
 app.use((req, res, next) => {
     // res.header('Access-Control-Allow-Origin', 'https://adamannmariewedding.ue.r.appspot.com');
