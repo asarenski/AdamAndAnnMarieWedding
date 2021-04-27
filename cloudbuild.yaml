@@ -6,5 +6,6 @@ steps:
     - 'ENV=${_ENV}'
     - 'PROPOSAL_PHOTOS_ID=${_PROPOSAL_PHOTOS_ID}'
     - 'SERVER_PORT=${_SERVER_PORT}'
+    - 'CORS=${_CORS}'
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['app', 'deploy', 'app.yaml']
