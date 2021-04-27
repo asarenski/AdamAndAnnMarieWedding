@@ -1,3 +1,10 @@
 steps:
+- name: node
+  entrypoint: npm
+  args: ["run", "create-env"]
+  env:
+    - 'ENV=${_ENV}'
+    - 'PROPOSAL_PHOTOS_ID=${_PROPOSAL_PHOTOS_ID}'
+    - 'SERVER_PORT=${_SERVER_PORT}'
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['app', 'deploy', 'app.yaml']
